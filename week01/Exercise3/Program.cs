@@ -7,7 +7,7 @@ class Program
         string response;
         do
         {
-            Console.WriteLine("Hello World! This is the Exercise3 Guess My Number Game Project.");
+            Console.WriteLine("Hello World! This is the Exercise3 Guess Random Number Game Project.");
 
             Random randomGenerator = new Random(); //Create Random object.
             int magicNumber = randomGenerator.Next(1, 100); //Pick random number between 1 to 100 and store in an int variable magicNumber.
