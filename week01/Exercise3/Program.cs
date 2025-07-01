@@ -9,20 +9,29 @@ class Program
         Console.Write("What is the magic number? "); // request for input from the player.
         int magicNumber = int.Parse(Console.ReadLine()); //convert the user input to an int and store in a variable guessNumber.
 
-        Console.Write("What is your guess? ");
-        int guess = int.Parse(Console.ReadLine());
+        int guess = 0; // initialized guess to 0.
 
-        if (guess > magicNumber)
+        while (magicNumber != guess) //Created a loop that keep looping till the comparison is correct.
         {
-            Console.WriteLine("Guess lower!");
-        }
-        else if (guess < magicNumber)
-        {
-            Console.WriteLine("Guess higher!");
-        }
-        else
-        {
-            Console.WriteLine($"You guessed it: {guess}");
+            Console.Write("What is your guess? "); //requested for guess input from user.
+            guess = int.Parse(Console.ReadLine()); //converted user input and in int variable guess.
+
+
+            // Compare guess with magicNumber.
+            if (guess > magicNumber)
+            {
+                Console.WriteLine("Guess Lower!");
+            }
+
+            else if (guess < magicNumber)
+            {
+                Console.WriteLine("Guess higher!");
+            }
+
+            else
+            {
+                Console.WriteLine($"You guessed it: {guess}");
+            }
         }
 
         //Random randomGenerator = new Random(); //Create Random object.
@@ -32,7 +41,7 @@ class Program
             //{
 
             //}
-            //Console.WriteLine(number);
+            //Console.WriteLine(number)
 
     }
 }
