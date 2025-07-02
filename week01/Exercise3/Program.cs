@@ -4,6 +4,8 @@ class Program
 {
     static void Main(string[] args)
     {
+        int play = 0;
+        int totalGuess = 0;
         string response;
         do
         {
@@ -20,6 +22,7 @@ class Program
                 Console.Write("What is your guess? "); //requested for guess input from user.
                 guess = int.Parse(Console.ReadLine()); //converted user input and in int variable guess.
                 guessCount += 1;
+                totalGuess += 1;
 
 
                 // Compare guess with magicNumber.
@@ -38,9 +41,12 @@ class Program
                     Console.WriteLine($"You guessed it: you guessed {guessCount} times.");
                 }
             }
+            play += 1;
             Console.Write("Do you want to repay? ");
             response = Console.ReadLine();
 
         } while (response == "yes");
+        Console.WriteLine($"You played {play} time(s) and your total guesses is {totalGuess}");
+        Console.WriteLine("Thanks for playing our game.");
     }
 }
