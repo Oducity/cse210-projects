@@ -23,5 +23,7 @@ class Program
         resume._personalName = "Odumamwen Evans Henry Aisiokuebor";
         resume._job.Add(job1); //Add job1 to the resume _job list.
         resume._job.Add(job2); //Add job2 to the resume _job list.
+
+        resume.DisplayResume();
     }
 }
