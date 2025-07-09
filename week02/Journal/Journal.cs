@@ -21,6 +21,12 @@ public class Journal
     // Created SaveToFile() method.
     public void SaveToFile()
     {
+
+    }
+
+    //Created LoadFromFile() method
+    public void LoadFromFile()
+    {
         
     }
 }
