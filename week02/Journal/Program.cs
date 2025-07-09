@@ -44,7 +44,9 @@ class Program
 
             else if (menu == 3)
             {
-                
+                Console.Write("Enter file name: ");
+                fileName = Console.ReadLine();
+                journal.SaveToFile(fileName);
             }
         }
     }
