@@ -26,7 +26,7 @@ public class PromptGenerator
         }
         else if (randomNumber == 3)
         {
-            Console.WriteLine(_rand = "How best were you to your fanily today?");
+            Console.WriteLine(_rand = "How best were you to your family today?");
         }
         else if (randomNumber == 4)
         {
