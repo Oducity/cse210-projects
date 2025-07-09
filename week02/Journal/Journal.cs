@@ -17,4 +17,10 @@ public class Journal
     {
 
     }
+
+    // Created SaveToFile() method.
+    public void SaveToFile()
+    {
+        
+    }
 }
