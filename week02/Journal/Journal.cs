@@ -27,6 +27,6 @@ public class Journal
     //Created LoadFromFile() method
     public void LoadFromFile()
     {
-        
+
     }
 }
