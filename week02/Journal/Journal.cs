@@ -20,7 +20,7 @@ public class Journal
     //Created DisplayAll() method.
     public void DisplayAll()
     {
-        foreach (Entry n in _entry)
+        foreach (Entry n in _entry) // loop through the Entry list and display them to the console.
         {
             Console.WriteLine($"Prompt Question: {n._promptText}, Response: {n._entryText}, Date: {n._date}");
         }
@@ -30,7 +30,7 @@ public class Journal
     public void SaveToFile(string fileName)
     {
 
-        using (StreamWriter writer = new StreamWriter(fileName))
+        using (StreamWriter writer = new StreamWriter(fileName)) // called the default streamWriter() class in C# library and assign it to a variable, writer.
         {
             foreach (Entry n in _entry)
             {
@@ -42,8 +42,9 @@ public class Journal
     }
 
     //Created LoadFromFile() method
-    public void LoadFromFile()
+    public void LoadFromFile(string fileName)
     {
-
+        string readText = File.ReadAllText(fileName); //Called the default File.ReadAllText() in C# and assign it a variable, readText.
+        Console.WriteLine(readText); // Read all text to the console.
     }
 }

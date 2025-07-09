@@ -48,6 +48,20 @@ class Program
                 fileName = Console.ReadLine();
                 journal.SaveToFile(fileName);
             }
+
+            else if (menu == 4)
+            {
+                Console.Write("Enter the file name you want to load: ");
+                fileName = Console.ReadLine();
+                {
+                    journal.LoadFromFile(fileName);
+                }
+            }
+
+            else if (menu == 5)
+            {
+                break;
+            }
         }
     }
 }
