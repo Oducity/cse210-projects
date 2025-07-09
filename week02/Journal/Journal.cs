@@ -11,6 +11,10 @@ public class Journal
     //Created AddEntry() method.
     public void AddEntry(Entry newEntry)
     { }
-    
-    //Created 
+
+    //Created DisplayAll() method.
+    public void DisplayAll()
+    {
+
+    }
 }
