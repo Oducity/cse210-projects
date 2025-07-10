@@ -34,4 +34,9 @@ public class Greeting
             Console.WriteLine("It Is Night, Please Record Your Journal If You Could.");
         }
     }
+
+    public void GoodBye()
+    {
+        Console.WriteLine("Good Bye!");
+    }
 }

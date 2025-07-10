@@ -67,6 +67,7 @@ class Program
 
             else if (menu == 5)
             {
+                greeting.GoodBye();
                 break;
             }
         }
