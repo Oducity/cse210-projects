@@ -16,17 +16,17 @@ public class Greeting
 
         if (hour < 12)
         {
-            Console.WriteLine("Good Morning, You're Welcome To The Journal App!");
+            Console.WriteLine("Good Morning, Welcome To The Journal App!");
         }
 
         else if (hour < 17)
         {
-            Console.WriteLine("Good Afternoon, You're Welcome To The Journal App!");
+            Console.WriteLine("Good Afternoon, Welcome To The Journal App!");
         }
 
         else if (hour < 19)
         {
-            Console.WriteLine("Good Evening, You're Welcome To The Journal App!");
+            Console.WriteLine("Good Evening, Welcome To The Journal App!");
         }
 
         else
