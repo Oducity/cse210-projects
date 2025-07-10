@@ -1,5 +1,9 @@
 using System;
 
+// In order to exceed core requirements, I developed Greeting class that get
+// the hour of the day and print a welcome message specific to the
+// current hour of the day.
+
 class Program
 {
     static void Main(string[] args)
