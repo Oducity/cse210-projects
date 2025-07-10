@@ -37,6 +37,6 @@ public class Greeting
 
     public void GoodBye()
     {
-        Console.WriteLine("Good Bye!");
+        Console.WriteLine("Goodbye!");
     }
 }
