@@ -4,10 +4,13 @@ class Program
 {
     static void Main(string[] args)
     {
-        Console.WriteLine("Hello World! This is the Journal Project.");
+        Greeting greeting = new Greeting(); //Created the Greeting Class object.
         Journal journal = new Journal();//Created Journal class object and assigned it, journal.
-        int menu = 0; //Initialize menu to 0.
+        greeting.GreetingTime();  // Called the GreetingTime() method belonging to the Greeting class
 
+
+
+        int menu = 0; //Initialize menu to 0.
         while (menu != 5) // Create menu comparison loop.
         {
 
