@@ -13,8 +13,10 @@ public class Reference
         _endVerse = 10;
     }
 
-    public void GetReference()
+    public string GetReference()
     {
 
+        return $"{_book} {_chapter}:{_verse} - {_endVerse}";
     }
 }
++2348032729007
