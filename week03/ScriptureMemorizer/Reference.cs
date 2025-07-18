@@ -19,4 +19,3 @@ public class Reference
         return $"{_book} {_chapter}:{_verse} - {_endVerse}";
     }
 }
-+2348032729007
