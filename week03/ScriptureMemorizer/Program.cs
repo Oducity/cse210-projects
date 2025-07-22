@@ -6,9 +6,31 @@ class Program
     {
         Console.WriteLine("Hello World! This is the ScriptureMemorizer Project.");
 
+        Reference reference = new Reference("1 Nephi", 1, 9);
+        string passage = "And it came to pass that he saw One descending out of the midst of heaven, and he beheld that his luster was above that of the sun at noon-day.";
+        Scripture scripture = new Scripture(reference, passage);
+        //Console.WriteLine(reference.GetReference());
+        while (!scripture.IsCompletelyHidden())
+        {
+            scripture.GetDisplayText();
 
-        Scripture scrip1 = new Scripture();
-        Reference ref1 = new Reference();
-        Console.WriteLine($"{ref1.GetReference()} {scrip1.Display()}");
+            Console.Write("Press ENTER key to continue or type 'quit' to finish ");
+            string response = Console.ReadLine();
+            if (response.ToLower() == "quit")
+            {
+                break;
+            }
+            else
+            {
+                scripture.HideRandomWords();
+            }
+
+        }
+        if (scripture.IsCompletelyHidden())
+        {
+            scripture.GetDisplayText();
+            Console.Clear();
+            //break;
+        }
     }
 }
