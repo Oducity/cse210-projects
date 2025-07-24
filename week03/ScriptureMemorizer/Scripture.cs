@@ -8,6 +8,8 @@ using System.Security.Cryptography.X509Certificates;
 public class Scripture
 {
     //private string _text;
+    private string _referenceNumber;
+    private string _scriptureQuote;
     private Reference _reference;
     private List<Word> _words;
     private Random _random;
@@ -19,6 +21,8 @@ public class Scripture
         _words = passage.Split(' ').Select(word => new Word(word)).ToList();
         _random = new Random();
     }
+
+    
 
 
 
@@ -39,7 +43,7 @@ public class Scripture
         Console.WriteLine(_reference.GetReference());
         Console.Clear();
         string display = string.Join(' ', _words.Select(word => word.GetDisplayText()));
-        Console.WriteLine(display);
+        Console.WriteLine($"{display}");
         return display;
     }
 
