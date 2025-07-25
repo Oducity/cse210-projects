@@ -1,4 +1,11 @@
-public class YouTubeVideos
+public class Video
 {
-    
+    public string _title;
+    public string _author;
+    public List<Comment> _comments;
+
+    public Video()
+    {
+        
+    }
 }
