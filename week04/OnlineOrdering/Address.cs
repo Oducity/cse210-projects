@@ -24,5 +24,8 @@ public class Address
         }
     }
 
-
+    public string GetAddress()
+    {
+        return $"{_street}{Environment.NewLine}{_city}, {_state},{Environment.NewLine}{_country}.";
+    }
 }
