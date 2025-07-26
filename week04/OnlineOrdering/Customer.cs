@@ -8,4 +8,11 @@ public class Customer
     {
 
     }
+
+
+    public bool Location()
+    {
+        Address ad = new Address();
+        return ad.AddressLocation();
+    }
 }

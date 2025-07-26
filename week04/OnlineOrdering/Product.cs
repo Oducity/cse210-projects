@@ -7,6 +7,12 @@ public class Product
 
     public Product()
     {
-        
+
+    }
+
+    public double GetTotalCost()
+    {
+        double totalCost = 0;
+        return totalCost;
     }
 }
