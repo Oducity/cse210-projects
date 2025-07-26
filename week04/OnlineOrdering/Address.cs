@@ -12,7 +12,7 @@ public class Address
 
     }
 
-    public bool AddressLocation()
+    public bool CheckLocation()
     {
         if (_country == "usa")
         {
@@ -23,4 +23,6 @@ public class Address
             return false;
         }
     }
+
+
 }
