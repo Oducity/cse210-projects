@@ -9,4 +9,9 @@ public class Video
     {
 
     }
+
+    public int GetNumberOfComments()
+    {
+        return 0;
+    }
 }
