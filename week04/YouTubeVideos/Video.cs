@@ -5,13 +5,22 @@ public class Video
     public double _length;
     public List<Comment> _comments = new List<Comment>();
 
+
     public Video()
     {
 
     }
 
-    public int GetNumberOfComments()
+    public void GetComments()
     {
-        return 0;
+        int commentCount = 0;
+        foreach (Comment com in _comments)
+        {
+            commentCount++;
+            Console.WriteLine($"Name of Commenter: {com._nameOfCommenter}, Comment:{com._text}.");
+            
+        }
+        Console.WriteLine("Number of comments: " + commentCount);
     }
+    
 }
