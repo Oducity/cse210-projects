@@ -26,14 +26,14 @@ class Program
         Video video3 = new Video();
 
         video1._title = "The Transporter";
-        video1._author = "Luc Benson, Robert Mark Kamen.";
+        video1._author = "Luc Benson, Robert Mark Ben";
         video1._length = 65;
         video1._comments.Add(comment1);
         video1._comments.Add(comment2);
         video1._comments.Add(comment3);
 
         video2._title = "The Heads of States";
-        video2._author = "John Wattson";
+        video2._author = "John Watson";
         video2._length = 72;
         video2._comments.Add(comment1);
         video2._comments.Add(comment2);
@@ -55,8 +55,8 @@ class Program
 
         foreach (Video v in account._videos)
         {
-            Console.WriteLine(account._accountName);
-            Console.WriteLine($"Title: {v._title},  Video Author: {v._author},  Video Length: {v._length}minutes");
+            Console.WriteLine($"YouTube Account: " + account._accountName);
+            Console.WriteLine($"Title: {v._title}.  Video Author: {v._author}.  Video Length: {v._length} minutes.");
             video1.GetComments();   
         }
 

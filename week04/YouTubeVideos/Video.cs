@@ -17,7 +17,7 @@ public class Video
         foreach (Comment com in _comments)
         {
             commentCount++;
-            Console.WriteLine($"Name of Commenter: {com._nameOfCommenter}, Comment:{com._text}.");
+            Console.WriteLine($"Name of Commenter: {com._nameOfCommenter} Comment: {com._text}");
             
         }
         Console.WriteLine("Number of comments: " + commentCount);
