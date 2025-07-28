@@ -23,22 +23,26 @@ public class Address
 
     public bool SetDeliveryCharge()
     {
-        if (_country == "usa")
+        if (_country == "U.S")
         {
             _deliveryCharges = 5;
-            Console.WriteLine($"Delivery within the U>S: ${_deliveryCharges}");
             return true;
         }
         else
         {
             _deliveryCharges = 35;
-            Console.WriteLine($"Delivery outside of U>S: ${_deliveryCharges}");
             return false;
         }
     }
 
+    public void GetLocation()
+    {
+        Console.WriteLine($"Location: {_country}");
+    }
+
     public double GetDeliveryCharge()
     {
+        SetDeliveryCharge();
         return _deliveryCharges;
     }
 

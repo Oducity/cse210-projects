@@ -21,7 +21,7 @@ public class Product
 
     public void GetProductDetails()
     {
-        Console.WriteLine($"Product Id: {_id}, Product Name: {_name}");
+        Console.WriteLine($"Product Id: {_id}, Product Name: {_name}, Product Price: ${_price}, Product Quantity: {_quantity}{Environment.NewLine}Product Amount: ${_price * _quantity}");
     }
     
 }

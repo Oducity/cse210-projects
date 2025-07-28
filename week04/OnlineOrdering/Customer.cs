@@ -16,4 +16,15 @@ public class Customer
         Address ad = new Address();
         return ad.SetDeliveryCharge();
     }
+
+    public void DisplayCustomerName()
+    {
+        Console.WriteLine($"Customer: {_name}");
+    }
+
+    public double GetDeliveryCharge()
+    {
+        Address ad = new Address();
+        return ad.GetDeliveryCharge();
+    }
 }
