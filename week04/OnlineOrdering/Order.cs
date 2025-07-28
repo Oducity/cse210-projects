@@ -1,13 +1,14 @@
+using System.Runtime.CompilerServices;
+
 public class Order
 {
     private List<Product> _products = new List<Product>();
     Customer _customer;
 
-    public Order(Product product, Customer customer)
+    public Order(Product product, Product product1, Product product2, Customer customer)
     {
         _customer = customer;
         _products.Add(product);
     }
-
     
 }

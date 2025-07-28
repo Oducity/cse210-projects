@@ -24,10 +24,12 @@ public class Address
     {
         if (_country == "usa")
         {
+            Console.WriteLine("Yes");
             return true;
         }
         else
         {
+            Console.WriteLine("No");
             return false;
         }
     }

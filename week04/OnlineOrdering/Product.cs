@@ -18,5 +18,10 @@ public class Product
         double totalCost = _price * _quantity;
         return totalCost;
     }
+
+    public void GetProductDetails()
+    {
+        Console.WriteLine($"Product Id: {_id}, Product Name: {_name}");
+    }
     
 }
