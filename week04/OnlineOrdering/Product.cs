@@ -5,14 +5,18 @@ public class Product
     private double _price;
     private double _quantity;
 
-    public Product()
+    public Product(string name, double id, double price, double quantity)
     {
-
+        _name = name;
+        _id = id;
+        _price = price;
+        _quantity = quantity;
     }
 
-    public double GetTotalCost(string name, double id, double price, double quantity)
+    public double GetTotalCost()
     {
-        double totalCost = 0;
+        double totalCost = _price * _quantity;
         return totalCost;
     }
+    
 }

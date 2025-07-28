@@ -1,12 +1,13 @@
 public class Customer
 {
     private string _name;
-    private List<Address> _address = new List<Address>();
+    private Address _address;
 
 
-    public Customer()
+    public Customer(string name, Address adr)
     {
-
+        _name = name;
+        _address = adr;
     }
 
 
