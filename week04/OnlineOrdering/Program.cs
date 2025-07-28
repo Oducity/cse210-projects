@@ -8,7 +8,6 @@ class Program
 
         Address address1 = new Address("21N Rodeo Drive,", "Los Angeles", "California", "usa");
         Address address2 = new Address("6 Okugbe street,", "Benin City", "Edo State", "Nigeria");
-
-        Order order = new Order();
+        Address address3 = new Address("404 Gran Via", "Madrid", "Madrid", "Spain");
     }
 }
