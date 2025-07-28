@@ -6,6 +6,7 @@ public class Address
     private string _city;
     private string _state;
     private string _country;
+    private double _deliveryCharges;
 
     public Address()
     {
@@ -20,19 +21,27 @@ public class Address
         _country = country;
     }
 
-    public bool CheckLocation()
+    public bool SetDeliveryCharge()
     {
         if (_country == "usa")
         {
-            Console.WriteLine("Yes");
+            _deliveryCharges = 5;
+            Console.WriteLine($"Delivery within the U>S: ${_deliveryCharges}");
             return true;
         }
         else
         {
-            Console.WriteLine("No");
+            _deliveryCharges = 35;
+            Console.WriteLine($"Delivery outside of U>S: ${_deliveryCharges}");
             return false;
         }
     }
+
+    public double GetDeliveryCharge()
+    {
+        return _deliveryCharges;
+    }
+
 
     public string GetAddress()
     {

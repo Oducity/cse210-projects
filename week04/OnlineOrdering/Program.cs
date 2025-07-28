@@ -20,21 +20,14 @@ class Program
         Customer customer1 = new Customer("Odumamwen Henry", address1);
         Customer customer2 = new Customer("Unicon Group of Company", address2);
         
-        //address1.CheckLocation();
-        //Console.WriteLine(address1.GetAddress());
-//
-        //address2.CheckLocation();
-        //Console.WriteLine(address2.GetAddress());
-//
-        //address2.CheckLocation();
-        //Console.WriteLine(address2.GetAddress());
-
-        //Console.WriteLine("$" + product1.GetTotalCost());
-        //Console.WriteLine("$" + product2.GetTotalCost());
-        //Console.WriteLine("$" + product3.GetTotalCost());
 
         Order order1 = new Order(product1, product3, product6, customer1);
-        
+        bool addr = address1.SetDeliveryCharge();
+        if (addr == true)
+        {
+            
+            Console.WriteLine("$" + product1.GetTotalCost() + product3.GetTotalCost() + product6.GetTotalCost());
+        }
 
         Order order2 = new Order(product2, product4, product5, customer2);
     }
