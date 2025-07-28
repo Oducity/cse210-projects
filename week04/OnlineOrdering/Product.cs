@@ -10,7 +10,7 @@ public class Product
 
     }
 
-    public double GetTotalCost()
+    public double GetTotalCost(string name, double id, double price, double quantity)
     {
         double totalCost = 0;
         return totalCost;
