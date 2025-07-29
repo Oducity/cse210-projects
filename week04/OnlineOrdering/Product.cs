@@ -19,9 +19,8 @@ public class Product
         return totalCost;
     }
 
-    public void GetProductDetails()
+    public void GetPackingLabel()
     {
         Console.WriteLine($"Product Id: {_id}, Product Name: {_name}, Product Price: ${_price}, Product Quantity: {_quantity}{Environment.NewLine}Product Amount: ${_price * _quantity}");
     }
-    
 }
