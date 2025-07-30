@@ -6,4 +6,6 @@ class Program
     {
         Console.WriteLine("Hello World! This is the Homework Project.");
     }
+    Assignment assignment1 = new Assignment("Oducity", "Inheritance");
+    
 }
