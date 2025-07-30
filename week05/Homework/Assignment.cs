@@ -9,6 +9,16 @@ public class Assignment
         _topic = topic;
     }
 
+    public string GetStudentName()
+    {
+        return _studentName;
+    }
+
+    public string GetTopic()
+    {
+        return _topic;
+    }
+
     public string GetSummary()
     {
         return $"Student name:{_studentName}{Environment.NewLine}Topic: {_topic}";

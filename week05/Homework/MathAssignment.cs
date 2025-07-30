@@ -11,6 +11,6 @@ public class MathAssignment : Assignment
 
     public string GetHomeWorkList()
     {
-        return "";
+        return $"Student Name: {GetStudentName()} - Topic: {GetTopic()}{Environment.NewLine}Section: {_textbookSection}  Problem: {_problem}";
     }
 }

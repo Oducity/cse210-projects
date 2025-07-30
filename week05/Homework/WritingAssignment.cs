@@ -9,6 +9,6 @@ public class WritingAssignment : Assignment
 
     public string GetWritingInformation()
     {
-        return "";
+        return $"Student Name: {GetStudentName()} - Topic: {GetTopic()}{Environment.NewLine}{_title} by {GetStudentName()}";
     }
 }
