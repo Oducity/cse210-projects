@@ -11,20 +11,23 @@ public class Customer
     }
 
 
-    public bool Location()
+    public string GetLocation()
     {
-        Address ad = new Address();
-        return ad.SetDeliveryCharge();
+        return _address.GetLocation();
     }
 
-    public void DisplayCustomerName()
+    public string GetCustomerName()
     {
-        Console.WriteLine($"Customer: {_name}");
+        return $"Customer: {_name}";
     }
 
     public double GetDeliveryCharge()
     {
-        Address ad = new Address();
-        return ad.GetDeliveryCharge();
+        return _address.GetDeliveryCharge();
+    }
+
+    public string GetAddress()
+    {
+        return _address.GetAddress();
     }
 }

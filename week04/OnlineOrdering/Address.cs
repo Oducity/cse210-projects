@@ -35,9 +35,9 @@ public class Address
         }
     }
 
-    public void GetLocation()
+    public string GetLocation()
     {
-        Console.WriteLine($"Location: {_country}");
+        return _country;
     }
 
     public double GetDeliveryCharge()

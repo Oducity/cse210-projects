@@ -12,15 +12,16 @@ public class Product
         _price = price;
         _quantity = quantity;
     }
+    
 
-    public double GetTotalCost()
+    public string GetPackingLabel()
     {
-        double totalCost = _price * _quantity;
-        return totalCost;
+        return $"Product Id: {_id}, Product Name: {_name}, Product Price: ${_price}, Product Quantity: {_quantity}{Environment.NewLine}Product Amount: ${_price * _quantity}";
     }
 
-    public void GetPackingLabel()
+
+    public double GetProductTotal()
     {
-        Console.WriteLine($"Product Id: {_id}, Product Name: {_name}, Product Price: ${_price}, Product Quantity: {_quantity}{Environment.NewLine}Product Amount: ${_price * _quantity}");
+        return _price * _quantity;
     }
 }
