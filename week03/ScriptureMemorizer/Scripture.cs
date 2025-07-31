@@ -7,7 +7,6 @@ using System.Security.Cryptography.X509Certificates;
 
 public class Scripture
 {
-    //private string _text;
     private string _referenceNumber;
     private string _scriptureQuote;
     private Reference _reference;
