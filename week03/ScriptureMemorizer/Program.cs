@@ -36,6 +36,9 @@ class Program
             scripture.GetDisplayText();
             Console.Clear();
             Console.WriteLine($"Numbers of hidden words: {scripture.GetHiddenCount()}");
+            Console.Write("Press Enter to clear the screen. ");
+            string clear = Console.ReadLine();
+            Console.Clear();
             //break;
         }
     }
