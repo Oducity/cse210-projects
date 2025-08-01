@@ -12,6 +12,7 @@ public class Scripture
     private Reference _reference;
     private List<Word> _words;
     private Random _random;
+    private int _hiddenCount;
 
 
     public Scripture(Reference reference, string passage)
@@ -31,6 +32,7 @@ public class Scripture
 
         if (notHidden.Count > 0)
         {
+            _hiddenCount += 1;
             int index = _random.Next(notHidden.Count);
             notHidden[index].Hide();
         }
@@ -44,6 +46,11 @@ public class Scripture
         string display = string.Join(' ', _words.Select(word => word.GetDisplayText()));
         Console.WriteLine($"{display}");
         return display;
+    }
+
+    public int GetHiddenCount()
+    {
+        return _hiddenCount;
     }
 
     public bool IsCompletelyHidden()
