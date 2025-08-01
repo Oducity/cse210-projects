@@ -18,7 +18,7 @@ class Program
         while (!scripture.IsCompletelyHidden())
         {
             scripture.GetDisplayText();
-            Console.WriteLine(scripture.GetHiddenCount());
+            Console.WriteLine($"Numbers of hidden words: {scripture.GetHiddenCount()}");
 
             Console.Write("Press ENTER key to continue or type 'quit' to finish ");
             string response = Console.ReadLine();
@@ -35,7 +35,7 @@ class Program
         {
             scripture.GetDisplayText();
             Console.Clear();
-            Console.WriteLine(scripture.GetHiddenCount());
+            Console.WriteLine($"Numbers of hidden words: {scripture.GetHiddenCount()}");
             //break;
         }
     }
