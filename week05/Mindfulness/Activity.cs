@@ -55,19 +55,7 @@ public class Activity
             Console.Write("\b \b");
         }
     }
-
-    public void PauseTimer2()
-    {
-        int time = 5;
-        for (int i = time; i >= 0; i--)
-        {
-            _pauseTimer += 1;
-            Console.Write(i);
-            Thread.Sleep(1000);
-            _timeSpent += 1;
-            Console.Write("\b \b");
-        }
-    }
+    
 
     public void DisplaySpinner()
     {

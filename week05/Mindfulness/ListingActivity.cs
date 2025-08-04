@@ -25,7 +25,7 @@ public class ListingActivity : BreathingActivity
             Console.WriteLine("List as many responses you can to the following prompt:" + Environment.NewLine);
             Console.WriteLine($"--- {promptText} __");
             Console.Write("You may begin in:" + Environment.NewLine);
-            PauseTimer2();
+            PauseTimer();
             _timeSpent = GetTimeSpent();
             while (_duration > _timeSpent)
             {
