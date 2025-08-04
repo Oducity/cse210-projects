@@ -19,7 +19,7 @@ public class BreathingActivity : Activity
     }
     
 
-    public void DisplayActivityMessage()
+    public void DisplayBreathingMessage()
     {
         Console.WriteLine("");
         Console.WriteLine("");

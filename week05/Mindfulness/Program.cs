@@ -23,7 +23,7 @@ class Program
                 //duration += 13;
                 for (int i = duration; i > 0; i -= 13)
                 {
-                    activity1.DisplayActivityMessage();
+                    activity1.DisplayBreathingMessage();
                     duration -= activity1.GetTimeSpent();
                 }
                 activity1.DisplayEndMessage();
