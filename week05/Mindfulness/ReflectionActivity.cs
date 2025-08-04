@@ -1,3 +1,5 @@
+using System.ComponentModel;
+
 public class ReflectionActivity : BreathingActivity
 {
     private List<string> _promptQuestions = new List<string>() { "Why was this experience meaningful to you?", "Have you ever done anything like this before?", "How did you get started?", "How did you feel when it was complete?", "What made this time different than other times when you were not as successful?", "What is your favorite thing about this experience?", "What could you learn from this experience that applies to other situations?", "What did you learn about yourself through this experience?", "How can you keep this experience in mind in the future?", "How did the glory of the Lord reflect in this experience" };
@@ -6,7 +8,7 @@ public class ReflectionActivity : BreathingActivity
     private List<int> _textIndexes = new List<int>();
     private int _duration;
     private int _timeSpent;
-    
+
     public ReflectionActivity(string activityName, string description, string preparationMessage, string endMessage) : base(activityName, description, preparationMessage, endMessage)
     {
 
@@ -14,7 +16,9 @@ public class ReflectionActivity : BreathingActivity
 
     public void GetRandomReflection()
     {
-        if (_questionsIndexes.Count < _promptQuestions.Count)
+        _duration = GetDuration();
+        _timeSpent = GetTimeSpent();
+        while (_questionsIndexes.Count < _promptQuestions.Count && _duration > _timeSpent)
         {
             Random rand = new Random();
             //pick text index value
@@ -32,15 +36,12 @@ public class ReflectionActivity : BreathingActivity
             {
                 //if ()
                 GetRandomQuestion();
-            } while (_promptQuestions.Count() < _questionsIndexes.Count());
+            } while (_promptQuestions.Count() < _questionsIndexes.Count() && _duration > _timeSpent);
 
         }
-        else if (_questionsIndexes.Count == _promptQuestions.Count)
-        {
-            DisplayEndMessage();
-        }
-        
+
     }
+    
 
     public void GetRandomQuestion()
     {
@@ -50,9 +51,13 @@ public class ReflectionActivity : BreathingActivity
         //Compare the numbers of items in _questionsIndexes with the numbers of items in _promptQuestions
         while (_questionsIndexes.Count() < _promptQuestions.Count())
         {
+
+            _duration = GetDuration();
+            _timeSpent = GetTimeSpent();
             int questionIndex = random.Next(_promptQuestions.Count);
-            if (!_questionsIndexes.Contains(questionIndex))
+            do
             {
+                _timeSpent = GetTimeSpent();
                 string question = _promptQuestions[questionIndex];
                 //PauseTimer();
                 Console.Write($"---{question}---");
@@ -60,8 +65,10 @@ public class ReflectionActivity : BreathingActivity
                 DisplaySpinner();
                 Console.WriteLine("");
                 _questionsIndexes.Add(questionIndex);
-            }
+            } while (!_questionsIndexes.Contains(questionIndex) && _duration > _timeSpent);
+
         }
+
     }
-    
+
 }

@@ -20,11 +20,11 @@ class Program
                 duration = activity1.GetDuration();
 
                 activity1.GetPreparationMessage();
-                //duration += 13;
+
                 for (int i = duration; i > 0; i -= 13)
                 {
                     activity1.DisplayBreathingMessage();
-                    duration -= activity1.GetTimeSpent();
+
                 }
                 activity1.DisplayEndMessage();
 
@@ -34,7 +34,7 @@ class Program
                 ReflectionActivity activity2 = new ReflectionActivity("Reflection Activity", "This activity will help you reflect on times in your life when you have shown strength and resilience.\nThis will help you recognize the power you have and how you can use it in other aspect of life.", "Prepare to start the activity.", "Well done! You have done great in this activity.");
                 activity2.DisplayIntro();
                 activity2.GetPreparationMessage();
-                //activity2.GetRandomReflection();
+
                 for (int i = 1; i >= 0; i++)
                 {
                     activity2.GetRandomReflection();
@@ -50,10 +50,15 @@ class Program
                 activity3.GetPreparationMessage();
 
                 int duration3 = activity3.GetDuration();
-                while (duration3 != 0)
+                int timeSpent = activity3.GetTimeSpent();
+                while (duration3 > timeSpent)
                 {
-                    //activity3.Get
+                    activity3.GetRandomPrompt();
+                    timeSpent = activity3.GetFinalTimeSpent();
                 }
+                activity3.GetNumberInList();
+                Thread.Sleep(5000);
+                activity3.DisplayEndMessage();
             }
         }
         

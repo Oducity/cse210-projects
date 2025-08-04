@@ -56,6 +56,12 @@ public class Activity
         }
     }
 
+    //public string GetRandomItems()
+    //{
+    //    Random rand = new Random();
+    //    int randIndex = rand.Next(_promptText.Count);
+    //}
+
     public void PauseTimer2()
     {
         int time = 5;
