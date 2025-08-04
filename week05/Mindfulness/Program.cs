@@ -2,6 +2,10 @@ using System;
 using System.ComponentModel.Design;
 using System.Transactions;
 
+// In order to exceed core requirement, I stored the user responses in a list
+//asked the user to see the list and at the user's authorization, the list is
+// displayed to the screen.
+
 class Program
 {
     static void Main(string[] args)
@@ -11,7 +15,7 @@ class Program
         while (menu != 4)
         {
             Console.Write($"To navigate the menu:{Environment.NewLine}  1: Breathing Activity{Environment.NewLine}  2: Reflection Activity{Environment.NewLine}  3: Listing Activity{Environment.NewLine}  4: Quit {Environment.NewLine}Type a menu number and hit 'ENTER KEY'.   ");
-            menu = int.Parse(Console.ReadLine());
+            menu = Int32.Parse(Console.ReadLine());
             int duration = 0;
             if (menu == 1)
             {
@@ -56,11 +60,19 @@ class Program
                     activity3.GetRandomPrompt();
                     timeSpent = activity3.GetFinalTimeSpent();
                 }
-                activity3.GetNumberInList();
-                Thread.Sleep(5000);
                 activity3.DisplayEndMessage();
+                Thread.Sleep(7000);
+                Console.WriteLine("Enter 'YES' to check your list or 'QUIT' to quit. ");
+                string ans = Console.ReadLine().ToLower();
+                if (ans == "yes")
+                {
+                    Console.Clear();
+                    activity3.GetItemsInList();
+                }
+                else break;
+
             }
         }
-        
+
     }
 }

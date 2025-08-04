@@ -45,9 +45,16 @@ public class ListingActivity : BreathingActivity
         return _timeSpent;
     }
 
-    public void GetNumberInList()
+    public void GetItemsInList()
     {
-        Console.WriteLine($"You listed {_responses.Count()} items!");
+        int j = 0;
+        Console.WriteLine($"You listed {_responses.Count()} items:");
+        foreach (string i in _responses)
+        {
+            j += 1;
+            Console.WriteLine( j+"." + "  " + i );
+            
+        }
     }
 
 }

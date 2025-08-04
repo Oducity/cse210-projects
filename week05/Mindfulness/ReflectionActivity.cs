@@ -46,26 +46,22 @@ public class ReflectionActivity : BreathingActivity
     public void GetRandomQuestion()
     {
         Random random = new Random();
-
+        
+        _duration = GetDuration();
+        _timeSpent = GetTimeSpent();
 
         //Compare the numbers of items in _questionsIndexes with the numbers of items in _promptQuestions
-        while (_questionsIndexes.Count() < _promptQuestions.Count())
+        //and also compare duration with the time spent.
+        while (_questionsIndexes.Count() < _promptQuestions.Count() && _duration > _timeSpent)
         {
-
-            _duration = GetDuration();
-            _timeSpent = GetTimeSpent();
             int questionIndex = random.Next(_promptQuestions.Count);
-            do
-            {
-                _timeSpent = GetTimeSpent();
-                string question = _promptQuestions[questionIndex];
-                //PauseTimer();
-                Console.Write($"---{question}---");
-                //Thread.Sleep(1000);
-                DisplaySpinner();
-                Console.WriteLine("");
-                _questionsIndexes.Add(questionIndex);
-            } while (!_questionsIndexes.Contains(questionIndex) && _duration > _timeSpent);
+            string question = _promptQuestions[questionIndex];
+            Console.Write($"---{question}---");
+            DisplaySpinner();
+            _timeSpent = GetTimeSpent();
+            //_timeSpent += 5; //Update the time spent until here.
+            Console.WriteLine("");
+            _questionsIndexes.Add(questionIndex);
 
         }
 

@@ -56,12 +56,6 @@ public class Activity
         }
     }
 
-    //public string GetRandomItems()
-    //{
-    //    Random rand = new Random();
-    //    int randIndex = rand.Next(_promptText.Count);
-    //}
-
     public void PauseTimer2()
     {
         int time = 5;
@@ -77,7 +71,7 @@ public class Activity
 
     public void DisplaySpinner()
     {
-        for (int i = 12; i > 0; i--)
+        for (int i = 10; i > 0; i--)
         {
             Console.Write("|");
             Thread.Sleep(500);
