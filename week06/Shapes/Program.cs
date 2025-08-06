@@ -1,4 +1,6 @@
 using System;
+//Completed the Shape program applying the principles of abstraction,
+// encapsulation, inheritance and polymorphism.
 
 class Program
 {
