@@ -33,6 +33,6 @@ class Program
 
     static void DisplayShapesInformation(Shape shape)
     {
-        Console.WriteLine($"The area of the{shape.GetColor()} {shape.GetShape()} is {shape.GetArea()} square centimeters.");
+        Console.WriteLine($"The area of the {shape.GetColor()} {shape.GetShape()} is {shape.GetArea()} square centimeters.");
     }
 }
