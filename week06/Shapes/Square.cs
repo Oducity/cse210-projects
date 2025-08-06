@@ -1,4 +1,4 @@
-public class square
+public class Square
 {
-    
+
 }
