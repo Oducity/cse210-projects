@@ -4,7 +4,6 @@ public abstract class Shape
 {
     private string _shape;
     private string _color;
-    private double _area;
 
     public Shape()
     {
