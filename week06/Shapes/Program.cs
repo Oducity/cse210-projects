@@ -13,13 +13,13 @@ class Program
         rectangle.SetWidth(10);
 
         Square square = new Square();
-        rectangle.SetShape("Square");
+        square.SetShape("Square");
         square.SetColor("blue");
         square.SetSide(15);
 
 
         Circle circle = new Circle();
-        rectangle.SetShape("Circle");
+        circle.SetShape("Circle");
         circle.SetColor("Brown");
         circle.SetRadius(25);
 
@@ -33,6 +33,6 @@ class Program
 
     static void DisplayShapesInformation(Shape shape)
     {
-        Console.WriteLine($"The area of the {shape.GetShape()} is {shape.GetArea()} square centimeters.");
+        Console.WriteLine($"The area of the{shape.GetColor()} {shape.GetShape()} is {shape.GetArea()} square centimeters.");
     }
 }
