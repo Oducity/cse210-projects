@@ -1,13 +1,24 @@
 using System.Security.Cryptography.X509Certificates;
 
-public class Shape
+public abstract class Shape
 {
+    private string _shape;
     private string _color;
     private double _area;
 
-    public Shape(string color)
+    public Shape()
     {
-        _color = color;
+
+    }
+
+    public void SetShape(string shape)
+    {
+        _shape = shape;
+    }
+
+    public string GetShape()
+    {
+        return _shape;
     }
 
     public string GetColor()
@@ -19,8 +30,5 @@ public class Shape
     {
         _color = color;
     }
-    public virtual double GetArea()
-    {
-        return _area;
-    }
+    public abstract double GetArea();
 }
