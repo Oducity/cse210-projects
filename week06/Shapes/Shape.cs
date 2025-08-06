@@ -1,4 +1,4 @@
-public class Shape
+public abstract class Shape
 {
     string _color;
 
@@ -11,8 +11,5 @@ public class Shape
     {
         _color = color;
     }
-    public void GetArea()
-    {
-
-    }
+    public abstract double GetArea();
 }
