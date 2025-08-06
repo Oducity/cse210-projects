@@ -1,6 +1,8 @@
+using System.Security.Cryptography.X509Certificates;
+
 public abstract class Shape
 {
-    string _color;
+    private string _color;
 
     public string GetColor()
     {
