@@ -29,6 +29,18 @@ class Program
         DisplayShapesInformation(rectangle);
         DisplayShapesInformation(square);
         DisplayShapesInformation(circle);
+        Console.WriteLine(Environment.NewLine);
+
+        List<Shape> shapes = new List<Shape>();
+        shapes.Add(circle);
+        shapes.Add(rectangle);
+        shapes.Add(square);
+
+        foreach (Shape sh in shapes)
+        {
+            Console.WriteLine($"The area {sh.GetArea()} square centimeters is gotten from the {sh.GetColor()} {sh.GetShape()}.");
+        }
+        
 
 
     }
