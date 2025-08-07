@@ -1,5 +1,8 @@
 public class CheckListGoal : Goal
 {
+    private int _amountCompleted;
+    private int _target;
+    private int _bonus;
     public string GetDetailsString()
     {
         return "";
