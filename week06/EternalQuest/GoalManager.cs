@@ -19,5 +19,41 @@ public class GoalManager
         }
     }
 
+    public void DisplayPlayerInfo()
+    {
+
+    }
+
+    public string ListGoalNames()
+    {
+        return "";
+    }
+
+    public string ListGoalDetails()
+    {
+        return "";
+    }
+
+    public void CreateGoal()
+    {
+
+    }
+
+    public void RecordEvent()
+    {
+
+    }
+
+    public void SaveGoal()
+    {
+
+    }
+
+    public void LoadGoal()
+    {
+        
+    }
+
 
 }
+
