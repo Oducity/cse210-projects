@@ -1,4 +1,17 @@
-public class SimpleGoal
+public class SimpleGoal : Goal
 {
-    
+    public override void RecordEvent()
+    {
+
+    }
+
+    public override bool IsComplete()
+    {
+        return true;
+    }
+
+    public override string GetStringRepresentation()
+    {
+        return "";
+    }
 }
