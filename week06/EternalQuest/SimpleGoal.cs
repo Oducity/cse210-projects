@@ -1,6 +1,8 @@
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
+
+
     public override void RecordEvent()
     {
 
@@ -15,4 +17,5 @@ public class SimpleGoal : Goal
     {
         return "";
     }
+
 }
