@@ -1,4 +1,5 @@
 using System.ComponentModel.Design;
+using System.Reflection;
 
 public class GoalManager
 {
@@ -43,24 +44,68 @@ public class GoalManager
         Console.WriteLine($"  1. Simple Goal{Environment.NewLine}  2.  Eternal Goal{Environment.NewLine}  3.  Checklist Goal");
         Console.Write("Which typ of goal would you like to create? ");
         typeOfGoal = Console.ReadLine();
-        if (typeOfGoal == "1")
+
+        if (typeOfGoal == "1")  // condition for SimpleGoal and its entries.
         {
-            ListGoalNames();
-            ListGoalDetails();
+            string name;
+            string description;
+            int points;
+
+            Console.Write("What is the name of the goal? ");
+            name = Console.ReadLine();// take the name of simple goals.
+
+            Console.Write("What is a short description of this goal? ");
+            description = Console.ReadLine(); // takes the description of simple goals.
+
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine()); //takes the associated points of simple goals.
+
+            SimpleGoal simpleGoal = new SimpleGoal(name, description, points);//Create an object of simple goals.
+            _goals.Add(simpleGoal); // Add created simple goals to list of goals.
         }
-        else if (typeOfGoal == "2")
+        else if (typeOfGoal == "2") // Condition for EternalGoal class.
         {
-            SimpleGoal simpleGoal = new SimpleGoal();
-            string newName = ListGoalNames();
-            simpleGoal.SetName(newName);
-            string description = ListGoalDetails();
-            simpleGoal.SetDescription(description);
+            string name;
+            string description;
+            int points;
+
+            Console.Write("What is the name of the goal? ");
+            name = Console.ReadLine();// take the name of Eternal goals.
+
+            Console.Write("What is a short description of this goal? ");
+            description = Console.ReadLine(); // takes the description of Eternal goals.
+
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
+
+            EternalGoal eternalGoal = new EternalGoal(name, description, points);
+            _goals.Add(eternalGoal);//Add Created Eternal goal to list of goals.
         }
-        else if (typeOfGoal == "3")
+        else if (typeOfGoal == "3")// Condition for CheckListGoal class.
         {
-            string name = ListGoalNames();
-            string description = ListGoalDetails();
-            string simpleGoal = $"{name}, {description}";
+            string name;
+            string description;
+            int points;
+            int target;
+            int bonus;
+
+            Console.Write("What is the name of the goal? ");
+            name = Console.ReadLine();// take the name of Eternal goals.
+
+            Console.Write("What is a short description of this goal? ");
+            description = Console.ReadLine(); // takes the description of Eternal goals.
+
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
+
+            Console.Write("What is the target number of times for this goal? ");
+            target = Int32.Parse(Console.ReadLine());
+
+            Console.Write("What is the Bonus point and completion of this goal? ");
+            bonus = Int32.Parse(Console.ReadLine());
+
+            CheckListGoal checkListGoal = new CheckListGoal(name, description, points, target, bonus);
+            _goals.Add(checkListGoal);
 
         }
     }
@@ -82,6 +127,13 @@ public class GoalManager
         Console.Write("What is a short description of it? ");
         string descriptionReply = Console.ReadLine();
         return $"{descriptionReply}";
+    }
+
+    public int EnterGoalPoints()
+    {
+        Console.Write("What is the amount of points associated with this goal? ");
+        int pointToEarn = Int32.Parse(Console.ReadLine());
+        return pointToEarn;
     }
 
     public void RecordEvent()
