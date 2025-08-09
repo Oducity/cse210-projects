@@ -4,7 +4,12 @@ using System.Reflection;
 public class GoalManager
 {
     private List<Goal> _goals = new List<Goal>();
-    private int _score;
+
+    public GoalManager()
+    {
+
+    }
+    //private int _score;
     public void Start()
     {
         int menu = 0;
@@ -34,7 +39,7 @@ public class GoalManager
                 RecordEvent();
             }
         }
-        
+
     }
 
     public void CreateGoal()
@@ -57,8 +62,7 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of simple goals.
 
-            Console.Write("What is the amount of points associated with this goal? ");
-            points = Int32.Parse(Console.ReadLine()); //takes the associated points of simple goals.
+            points = EnterGoalPoints(); //takes the associated points of simple goals.
 
             SimpleGoal simpleGoal = new SimpleGoal(name, description, points);//Create an object of simple goals.
             _goals.Add(simpleGoal); // Add created simple goals to list of goals.
@@ -75,8 +79,7 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of Eternal goals.
 
-            Console.Write("What is the amount of points associated with this goal? ");
-            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
+            points = EnterGoalPoints(); //takes the associated points of Eternal goals.
 
             EternalGoal eternalGoal = new EternalGoal(name, description, points);
             _goals.Add(eternalGoal);//Add Created Eternal goal to list of goals.
@@ -95,13 +98,12 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of Eternal goals.
 
-            Console.Write("What is the amount of points associated with this goal? ");
-            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
+            points = EnterGoalPoints(); //takes the associated points of Eternal goals.
 
             Console.Write("What is the target number of times for this goal? ");
             target = Int32.Parse(Console.ReadLine());
 
-            Console.Write("What is the Bonus point and completion of this goal? ");
+            Console.Write("What is the Bonus point at completion of the number times of this goal? ");
             bonus = Int32.Parse(Console.ReadLine());
 
             CheckListGoal checkListGoal = new CheckListGoal(name, description, points, target, bonus);
@@ -109,31 +111,46 @@ public class GoalManager
 
         }
     }
+
+    public void ListGoalNames()
+    {
+        Console.WriteLine("The goals are:");
+        int numbering = 0;
+        //int bonus = 0;
+        
+        foreach (Goal goal in _goals)
+        {
+            numbering += 1;
+
+            string check;
+            bool isComplete = goal.IsComplete();
+            if (isComplete == true)
+            {
+                check = "[X]";
+            }
+            else
+            {
+                check = "[]";
+            }
+            Console.WriteLine($"  {numbering}: {check} {goal.GetName()} ({goal.GetDescription()})");
+        }
+
+    }
     public void DisplayPlayerInfo()
     {
 
     }
 
-    public string ListGoalNames()
-    {
-        
-        Console.Write("What is the name of goal? ");
-        string nameReply = Console.ReadLine();
-        return $"{nameReply}";
-    }
-
     public string ListGoalDetails()
     {
-        Console.Write("What is a short description of it? ");
-        string descriptionReply = Console.ReadLine();
-        return $"{descriptionReply}";
+        return "";
     }
 
     public int EnterGoalPoints()
     {
         Console.Write("What is the amount of points associated with this goal? ");
-        int pointToEarn = Int32.Parse(Console.ReadLine());
-        return pointToEarn;
+        int goalPoint = Int32.Parse(Console.ReadLine());
+        return goalPoint;
     }
 
     public void RecordEvent()
@@ -148,7 +165,7 @@ public class GoalManager
 
     public void LoadGoal()
     {
-        
+
     }
 }
 

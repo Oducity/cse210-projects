@@ -12,7 +12,9 @@ public class EternalGoal : Goal
 
     public override bool IsComplete()
     {
-        return true;
+        int num1 = 0;
+        int num2 = 2;
+        return num1 == num2;
     }
 
     public override string GetStringRepresentation()
