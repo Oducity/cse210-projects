@@ -1,4 +1,0 @@
-Total Point: 290, 
-SimpleGoal: Wash plate, Description: Clean dishes. Points: 50. Completed: True
-EternalGoal: pray, Description: pray every morning. Points: 20
-CheckListGoal: Temple visit, Description: perform ordinance. Point: 100. Bonus: 500. Target: 3. Completed: 2
