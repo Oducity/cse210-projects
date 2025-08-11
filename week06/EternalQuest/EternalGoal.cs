@@ -9,7 +9,6 @@ public class EternalGoal : Goal
     public override void RecordEvent()
     {
         _initialPoint += GetPoint();
-        //Console.WriteLine($"Congratulations! You have earned {_points++} points!");
     }
 
     public override bool IsComplete()
@@ -23,6 +22,6 @@ public class EternalGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"Description: {GetDescription()}. Points: {_points}";
     }
 }

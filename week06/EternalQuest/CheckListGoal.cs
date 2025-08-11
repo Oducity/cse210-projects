@@ -16,12 +16,11 @@ public class CheckListGoal : Goal
 
     public int GetBonus()
     {
-        int bonus = 0;
         if (IsComplete())
         {
-            bonus += _bonus;
+            _points += _bonus;
         }
-        return bonus;
+        return _points;
     }
     public override string GetDetailsString()
     {
@@ -29,9 +28,9 @@ public class CheckListGoal : Goal
     }
     public override void RecordEvent()
     {
-        Console.Write("How many did you accomplish of this goal? ");
-        int amountAccomplished = Int32.Parse(Console.ReadLine());
+        int amountAccomplished = 1;
         _amountCompleted += amountAccomplished;
+        GetBonus();
     }
 
     public override bool IsComplete()
@@ -41,6 +40,6 @@ public class CheckListGoal : Goal
 
     public override string GetStringRepresentation()
     {
-        return "";
+        return $"Description: {GetDescription()}. Point: {_points}. Bonus: {_bonus}. Target: {_target}. Completed: {_amountCompleted}";
     }
 }

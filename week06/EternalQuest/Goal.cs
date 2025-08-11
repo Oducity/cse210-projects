@@ -9,10 +9,7 @@ public abstract class Goal
         _description = description;
         _points = point;
     }
-    //public string GetDetailsString()
-    //{
-    //    return "";
-    //}
+    
     public abstract void RecordEvent();
     public abstract bool IsComplete();
     public abstract string GetDetailsString();
