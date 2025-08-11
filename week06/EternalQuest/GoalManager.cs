@@ -1,5 +1,7 @@
+
 using System.ComponentModel.Design;
 using System.Reflection;
+using System.Xml;
 
 public class GoalManager
 {
@@ -62,7 +64,8 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of simple goals.
 
-            points = EnterGoalPoints(); //takes the associated points of simple goals.
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine());  //takes the associated points of simple goals.
 
             SimpleGoal simpleGoal = new SimpleGoal(name, description, points);//Create an object of simple goals.
             _goals.Add(simpleGoal); // Add created simple goals to list of goals.
@@ -79,7 +82,9 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of Eternal goals.
 
-            points = EnterGoalPoints(); //takes the associated points of Eternal goals.
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
+
 
             EternalGoal eternalGoal = new EternalGoal(name, description, points);
             _goals.Add(eternalGoal);//Add Created Eternal goal to list of goals.
@@ -98,7 +103,8 @@ public class GoalManager
             Console.Write("What is a short description of this goal? ");
             description = Console.ReadLine(); // takes the description of Eternal goals.
 
-            points = EnterGoalPoints(); //takes the associated points of Eternal goals.
+            Console.Write("What is the amount of points associated with this goal? ");
+            points = Int32.Parse(Console.ReadLine()); //takes the associated points of Eternal goals.
 
             Console.Write("What is the target number of times for this goal? ");
             target = Int32.Parse(Console.ReadLine());
@@ -111,13 +117,14 @@ public class GoalManager
 
         }
     }
+    
 
     public void ListGoalNames()
     {
         Console.WriteLine("The goals are:");
         int numbering = 0;
         //int bonus = 0;
-        
+
         foreach (Goal goal in _goals)
         {
             numbering += 1;
@@ -132,7 +139,7 @@ public class GoalManager
             {
                 check = "[]";
             }
-            Console.WriteLine($"  {numbering}: {check} {goal.GetName()} ({goal.GetDescription()})");
+            Console.WriteLine($"  {numbering}: {check} {goal.GetName()} ({goal.GetDescription()}) {goal.GetDetailsString()}");
         }
 
     }
@@ -146,21 +153,59 @@ public class GoalManager
         return "";
     }
 
-    public int EnterGoalPoints()
-    {
-        Console.Write("What is the amount of points associated with this goal? ");
-        int goalPoint = Int32.Parse(Console.ReadLine());
-        return goalPoint;
-    }
-
     public void RecordEvent()
     {
+        Console.WriteLine("Select a goal to record from the menu:");
+        Console.Write($"  1.  SimpleGaol{Environment.NewLine}  2.  EternalGaol{Environment.NewLine}  3.  CheckListGoal{Environment.NewLine}  ");
+        int choice = Int32.Parse(Console.ReadLine());
 
+        for (int i = 0; i <= _goals.Count; i++)
+        {
+            i = choice;
+            i -= 1;
+            if (_goals.Contains(_goals[i]))
+            {
+                _goals[i].RecordEvent();
+                if (_goals[i].IsComplete())
+                {
+                    Console.WriteLine("You have completed this goal.");
+                }
+            }
+            else
+            {
+                //Console.WriteLine("You have completed your target for this goal!");
+                //Console.WriteLine("Do you want to create more goals of this type?");
+                //Console.Write($"Press 1 to create.{Environment.NewLine}  Press 2 for main menu.");
+                //int create = Int32.Parse(Console.ReadLine());
+                //if (create == 1)
+                //{
+                //    CreateGoal();
+                //}
+                //else
+                //{
+                //    break;
+                //}
+                break;
+            }
+            Console.WriteLine($"Congratulations! you have earned {_goals[i].GetPoint()}");
+        }
+        
     }
 
     public void SaveGoal()
     {
+        Console.Write("Please enter the file name: ");
+        string filename = Console.ReadLine();
+        using (StreamWriter outputFile = new StreamWriter(filename))
+        {
+            foreach (Goal goal in _goals)
+            {
+                outputFile.WriteLine($"{goal}: {goal.GetName()}, {goal.GetDescription()},  {goal.GetDetailsString()}, {goal.GetPoint()},");
 
+            }
+        }
+
+        //DisplayPlayerInfo();
     }
 
     public void LoadGoal()

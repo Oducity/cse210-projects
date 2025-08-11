@@ -23,17 +23,15 @@ public class CheckListGoal : Goal
         }
         return bonus;
     }
-    public new string GetDetailsString()
+    public override string GetDetailsString()
     {
-        return "";
+        return $"---Currently completed: {_amountCompleted}" + "/" + $"{_target}";
     }
     public override void RecordEvent()
     {
         Console.Write("How many did you accomplish of this goal? ");
         int amountAccomplished = Int32.Parse(Console.ReadLine());
         _amountCompleted += amountAccomplished;
-        
-
     }
 
     public override bool IsComplete()

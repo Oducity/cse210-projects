@@ -3,7 +3,7 @@ using System.Drawing;
 public class SimpleGoal : Goal
 {
     private bool _isComplete;
-    private int _pointsOptained;
+    private int _pointsObtained;
 
     public SimpleGoal(string name, string description, int points) : base(name, description, points)
     {
@@ -20,6 +20,7 @@ public class SimpleGoal : Goal
         if (record >= record2)
         {
             _isComplete = true;
+            
         }
         else
         {
@@ -31,6 +32,10 @@ public class SimpleGoal : Goal
     {
 
         return _isComplete;
+    }
+    public override string GetDetailsString()
+    {
+        return "";
     }
 
     public override string GetStringRepresentation()

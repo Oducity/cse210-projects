@@ -1,0 +1,3 @@
+SimpleGoal: Buy a laptop., (laptop with 32gb ram and 1tb storage.), 
+EternalGoal: Scripture reading., (Read 5 verses daily.), 
+CheckListGoal: Temple visit, (Visit the temple and perform an ordnance.), ---Currently completed: 0/3
