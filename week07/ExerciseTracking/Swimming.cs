@@ -1,19 +1,40 @@
-public class Swimming : Activity
+public class SwimmingActivity : Activity
 {
+    private double _laps;
+
+
+    public override string GetDate()
+    {
+        DateTime dateTime = DateTime.Now;
+        string date = dateTime.ToString();
+        return date;
+    }
     public override double GetDistance()
     {
-        return 0;
-    }
-    public override double GetPace()
-    {
-        return 0;
+        return (GetSpeed() * GetLength()) / 60;
     }
     public override double GetSpeed()
     {
-        return 0;
+        return Math.Round(60 * (2 / GetLength()), 2);
+    }
+
+    public override double GetPace()
+    {
+        double pace = 60 / GetSpeed();
+
+        return pace;
+    }
+    public double GetLaps()
+    {
+        SetLaps();
+        return _laps;
+    }
+    public void SetLaps()
+    {
+        _laps = (GetDistance() * 1000) / 50;
     }
     public override string GetSummary()
     {
-        return "";
+        return $"{GetDate()} Swimming ({GetLength()} min): Distance {GetDistance()} km, Laps: {GetLaps()}, Speed: {GetSpeed()} kph, Pace: {GetPace()} min per km.";
     }
 }
